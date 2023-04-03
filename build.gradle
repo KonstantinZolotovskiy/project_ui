@@ -44,3 +44,27 @@ tasks.withType(Test) {
 test {
     useJUnitPlatform()
 }
+
+task java_advance(type: Test) {
+    useJUnitPlatform {
+        includeTags 'java_advance'
+    }
+}
+
+task java(type: Test) {
+    useJUnitPlatform {
+        includeTags 'java'
+    }
+}
+
+task login(type: Test) {
+    useJUnitPlatform {
+        includeTags 'login'
+    }
+}
+
+task python(type: Test) {
+    useJUnitPlatform {
+        includeTags 'python'
+    }
+}

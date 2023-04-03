@@ -3,9 +3,11 @@ package tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 @Feature("Java")
+@Tag("java")
 public class JavaPageTests extends TestBase {
 
     @Test
