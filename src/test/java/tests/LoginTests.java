@@ -5,10 +5,13 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testdata.LoginTestsData;
 
 @Feature("Login")
 @Tag("login")
 public class LoginTests extends TestBase {
+
+    LoginTestsData data = new LoginTestsData();
 
     @Test
     @DisplayName("Проверка авторизации без пароля")

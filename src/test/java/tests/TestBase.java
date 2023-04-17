@@ -12,7 +12,6 @@ import pages.JavaAdvancedPage;
 import pages.JavaPage;
 import pages.LoginPage;
 import pages.PythonPage;
-import testdata.TestData;
 
 
 public class TestBase {
@@ -22,7 +21,6 @@ public class TestBase {
     JavaAdvancedPage javaAdvancedPage = new JavaAdvancedPage();
     PythonPage pythonPage = new PythonPage();
     LoginPage loginPage = new LoginPage();
-    TestData data = new TestData();
 
     @BeforeAll
     public static void setUp() {

@@ -5,10 +5,13 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testdata.JavaPageTestsData;
 
 @Feature("Java")
 @Tag("java")
 public class JavaPageTests extends TestBase {
+
+    JavaPageTestsData data = new JavaPageTestsData();
 
     @Test
     @DisplayName("Проверка цены \"Курс Java\"")
