@@ -9,13 +9,13 @@ import testdata.JavaAdvancePageTestsData;
 
 @Feature("Java Advance")
 @Tag("java_advance")
+@Owner("K.Zolotovskiy")
 public class JavaAdvancePageTests extends TestBase {
 
     JavaAdvancePageTestsData data = new JavaAdvancePageTestsData();
 
     @Test
     @DisplayName("Проверка заголовков занятий в учебном плане курса Java Advance")
-    @Owner("K.Zolotovskiy")
     void javaAdvanceLessonsTitleTest() {
         javaAdvancedPage.openJavaAdvancedPage()
                 .checkCourseSyllabus(data.javaAdvanceLessonTitleList);

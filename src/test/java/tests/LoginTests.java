@@ -9,13 +9,13 @@ import testdata.LoginTestsData;
 
 @Feature("Login")
 @Tag("login")
+@Owner("K.Zolotovskiy")
 public class LoginTests extends TestBase {
 
     LoginTestsData data = new LoginTestsData();
 
     @Test
     @DisplayName("Проверка авторизации без пароля")
-    @Owner("K.Zolotovskiy")
     void loginWithoutPassword() {
         loginPage.openLoginPage()
                 .setEmail(faker.internet().emailAddress())
@@ -25,7 +25,6 @@ public class LoginTests extends TestBase {
 
     @Test
     @DisplayName("Проверка авторизации без e-mail")
-    @Owner("K.Zolotovskiy")
     void loginWithoutEmail() {
         loginPage.openLoginPage()
                 .setPassword(faker.internet().password())
