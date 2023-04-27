@@ -1,11 +1,9 @@
 package pages;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -17,7 +15,9 @@ public class LoginPage {
             header = $("h2.xdget-block"),
             emailInput = $("[name='email']"),
             passwordInput = $("[name='password']"),
-            enterButton = $(".btn-success");
+            enterButton = $(".btn-success"),
+            welcomeTitle = $(".logined-form .xdget-header"),
+            accountButton = $(".main-header__login");
 
     @Step("Открыть страницу авторизации")
     public LoginPage openLoginPage() {
@@ -28,13 +28,13 @@ public class LoginPage {
 
     @Step("Установить значение в поле \"e-mail\"")
     public LoginPage setEmail(String email) {
-        emailInput.should(visible).setValue(email);
+        emailInput.setValue(email);
         return this;
     }
 
     @Step("Установить значение в поле \"password\"")
     public LoginPage setPassword(String password) {
-        passwordInput.should(visible).setValue(password);
+        passwordInput.setValue(password);
         return this;
     }
 
@@ -45,7 +45,13 @@ public class LoginPage {
     }
 
     @Step("Проверка текста кнопки \"Войти\"")
-    public void checkTextInEnterButton(String text){
+    public void checkTextInEnterButton(String text) {
         enterButton.shouldHave(text(text));
+    }
+
+    @Step("Проверка успешной авторизации")
+    public void checkSuccessfulLogin(String userName) {
+        accountButton.click();
+        welcomeTitle.shouldHave(text("Здравствуйте, " + userName));
     }
 }

@@ -5,6 +5,7 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import pages.JavaAdvancedPage;
 import testdata.JavaAdvancePageTestsData;
 
 @Feature("Java Advance")
@@ -13,6 +14,7 @@ import testdata.JavaAdvancePageTestsData;
 public class JavaAdvancePageTests extends TestBase {
 
     JavaAdvancePageTestsData data = new JavaAdvancePageTestsData();
+    JavaAdvancedPage javaAdvancedPage = new JavaAdvancedPage();
 
     @Test
     @DisplayName("Проверка заголовков занятий в учебном плане курса Java Advance")
