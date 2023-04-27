@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$$x;
 
 public class BaseAbstractCoursePage {
 
-    SelenideElement
+    private SelenideElement
             header = $("h1.title"),
             priceButton = $("[href='#course_price']"),
             modalWindowWithSyllabus = $(".lesson-list"),
@@ -21,7 +21,7 @@ public class BaseAbstractCoursePage {
             thirdOption = $("[data-param='data/2/price']"),
             syllabusButton = $(".main-header__menu .show-programm-btn-2");
 
-    ElementsCollection lessonsTitle = $$x("//div[@class='link title']");
+    private ElementsCollection lessonsTitle = $$x("//div[@class='link title']");
 
     public void checkTitle(String title) {
         header.shouldHave(exactText(title));
